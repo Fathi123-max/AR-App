@@ -1,4 +1,5 @@
-# mahr
+# AR App
+Basic AR App Showing Flutter With AR
 
 A new Flutter project.
 
