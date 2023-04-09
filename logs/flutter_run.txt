@@ -1,0 +1,36 @@
+[22:41:21]: Spawning /home/fathi/snap/flutter/common/flutter/bin/flutter with args ["run","--machine","--start-paused","-d","linux","--devtools-server-address","http://127.0.0.1:9101/","--target","lib/main.dart"]
+[22:41:21]: ..  in /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[22:41:21]: ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code"}}
+[22:41:21]: PID: 48944
+[22:41:21]: /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so: undefined symbol: g_tls_channel_binding_error_quark
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so
+[22:41:21]: /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+[22:41:21]: /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+[22:41:22]: <== [{"event":"daemon.connected","params":{"version":"0.6.1","pid":48954}}]
+[22:41:22]: <== [{"event":"app.start","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","deviceId":"linux","directory":"/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr","supportsRestart":true,"launchMode":"run"}}]
+[22:41:22]: <== Launching lib/main.dart on Linux in debug mode...
+[22:41:22]: <== [{"event":"app.progress","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","id":"0","progressId":null,"message":"Building Linux application...","finished":false}}]
+[22:41:33]: <== [{"event":"app.progress","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","id":"0","progressId":null,"finished":true}}]
+[22:41:34]: <== [{"event":"app.debugPort","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","port":39293,"wsUri":"ws://127.0.0.1:39293/fht35LVwJeo=/ws","baseUri":"file:///tmp/mahrSJPKHH/mahr/"}}]
+[22:41:35]: <== [{"event":"app.progress","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","id":"1","progressId":null,"message":"Syncing files to device Linux...","finished":false}}]
+[22:41:35]: <== [{"event":"app.progress","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","id":"1","progressId":null,"finished":true}}]
+[22:41:35]: <== [{"event":"app.started","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376"}}]
+[22:43:37]: ==> [{"id":"1","method":"app.restart","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[22:43:37]: <== [{"event":"app.progress","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","id":"2","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[22:43:37]: <== [{"event":"app.progress","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","id":"3","progressId":null,"message":"Syncing files to device Linux...","finished":false}}]
+[22:43:37]: <== [{"event":"app.progress","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","id":"3","progressId":null,"finished":true}}]
+[22:43:37]: <== [{"event":"app.progress","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","id":"2","progressId":"hot.reload","finished":true}}]
+[22:43:37]: <== Reloaded 1 of 772 libraries in 534ms (compile: 61 ms, reload: 229 ms, reassemble: 191 ms).
+[22:43:37]: <== [{"id":"1","result":{"code":0,"message":"Reloaded 1 of 772 libraries"}}]
+[22:44:03]: ==> [{"id":"2","method":"app.restart","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","fullRestart":false,"pause":true,"reason":"save","debounce":true}}]
+[22:44:03]: <== [{"event":"app.progress","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","id":"4","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[22:44:03]: <== [{"event":"app.progress","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","id":"5","progressId":null,"message":"Syncing files to device Linux...","finished":false}}]
+[22:44:03]: <== [{"event":"app.progress","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","id":"5","progressId":null,"finished":true}}]
+[22:44:03]: <== [{"event":"app.progress","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376","id":"4","progressId":"hot.reload","finished":true}}]
+[22:44:03]: <== Reloaded 1 of 772 libraries in 452ms (compile: 43 ms, reload: 213 ms, reassemble: 174 ms).
+[22:44:03]: <== [{"id":"2","result":{"code":0,"message":"Reloaded 1 of 772 libraries"}}]
+[23:05:01]: ==> [{"id":"3","method":"app.stop","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376"}}]
+[23:05:01]: <== Application finished.
+[23:05:01]: <== [{"event":"app.stop","params":{"appId":"094b9563-f3b8-4a3f-b652-f7d5fcef9376"}}]

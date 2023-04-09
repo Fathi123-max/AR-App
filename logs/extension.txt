@@ -1,0 +1,834 @@
+!! PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING !!
+
+Dart Code extension: 3.60.1
+Flutter extension: 3.60.0 (not activated)
+
+App: Visual Studio Code
+Version: 1.76.1
+Platform: linux
+
+HTTP_PROXY: undefined
+NO_PROXY: undefined
+
+Logging Categories:
+    General
+
+Fri Mar 10 2023 [17:11:28 GMT+0200 (Eastern European Standard Time)] Log file started
+[17:11:28] [General] [Info] Searching for SDKs...
+[17:11:28] [General] [Info] Environment PATH:
+[17:11:28] [General] [Info]     /usr/local/sbin
+[17:11:28] [General] [Info]     /usr/local/bin
+[17:11:28] [General] [Info]     /usr/sbin
+[17:11:28] [General] [Info]     /usr/bin
+[17:11:28] [General] [Info]     /sbin
+[17:11:28] [General] [Info]     /bin
+[17:11:28] [General] [Info]     /usr/games
+[17:11:28] [General] [Info]     /usr/local/games
+[17:11:28] [General] [Info]     /snap/bin
+[17:11:28] [General] [Info]     /snap/bin
+[17:11:29] [General] [Info] Took 462ms to search for projects (5 levels)
+[17:11:29] [General] [Info] Took 0ms to filter out excluded projects (0 exclusion rules)
+[17:11:29] [General] [Info] Found Flutter project at /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr:
+			Mobile? false
+			Web? false
+			Create Trigger? true
+			Flutter Repo? false
+[17:11:29] [General] [Info] Searching for flutter
+[17:11:29] [General] [Info]     Looking for flutter in:
+[17:11:29] [General] [Info]         /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[17:11:29] [General] [Info]         /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/bin
+[17:11:29] [General] [Info]         /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/.flutter
+[17:11:29] [General] [Info]         /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/.flutter/bin
+[17:11:29] [General] [Info]         /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/vendor/flutter
+[17:11:29] [General] [Info]         /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/vendor/flutter/bin
+[17:11:29] [General] [Info]         /home/fathi/snap/flutter/common/flutter
+[17:11:29] [General] [Info]         /home/fathi/snap/flutter/common/flutter/bin
+[17:11:29] [General] [Info]         /home/fathi/flutter-sdk
+[17:11:29] [General] [Info]         /home/fathi/flutter-sdk/bin
+[17:11:29] [General] [Info]         /google/flutter
+[17:11:29] [General] [Info]         /google/flutter/bin
+[17:11:29] [General] [Info]         /usr/local/sbin
+[17:11:29] [General] [Info]         /usr/local/bin
+[17:11:29] [General] [Info]         /usr/sbin
+[17:11:29] [General] [Info]         /usr/bin
+[17:11:29] [General] [Info]         /sbin
+[17:11:29] [General] [Info]         /bin
+[17:11:29] [General] [Info]         /usr/games
+[17:11:29] [General] [Info]         /usr/games/bin
+[17:11:29] [General] [Info]         /usr/local/games
+[17:11:29] [General] [Info]         /usr/local/games/bin
+[17:11:29] [General] [Info]         /snap/bin
+[17:11:29] [General] [Info]         /snap/bin
+[17:11:29] [General] [Info]     Found at:
+[17:11:29] [General] [Info]         /home/fathi/snap/flutter/common/flutter/bin
+[17:11:29] [General] [Info]         /snap/bin
+[17:11:29] [General] [Info]         /snap/bin
+[17:11:29] [General] [Info] Following symlink: /snap/bin/flutter ==> /usr/bin/snap
+[17:11:29] [General] [Info] Target snap is not flutter, assuming /snap/bin/flutter is a package manager init script
+[17:11:29] [General] [Info] Following symlink: /snap/bin/flutter ==> /usr/bin/snap
+[17:11:29] [General] [Info] Target snap is not flutter, assuming /snap/bin/flutter is a package manager init script
+[17:11:29] [General] [Info]     Candidate paths to be post-filtered:
+[17:11:29] [General] [Info]         /home/fathi/snap/flutter/common/flutter
+[17:11:29] [General] [Info]         /snap/bin/flutter
+[17:11:29] [General] [Info]         /snap/bin/flutter
+[17:11:29] [General] [Info]     Found at /home/fathi/snap/flutter/common/flutter
+[17:11:29] [General] [Info]     Returning SDK path /home/fathi/snap/flutter/common/flutter for flutter
+[17:11:29] [General] [Info] Searching for dart
+[17:11:29] [General] [Info]     Looking for dart in:
+[17:11:29] [General] [Info]         /home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk
+[17:11:29] [General] [Info]         /home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk/bin
+[17:11:29] [General] [Info]         /usr/local/sbin
+[17:11:29] [General] [Info]         /usr/local/bin
+[17:11:29] [General] [Info]         /usr/sbin
+[17:11:29] [General] [Info]         /usr/bin
+[17:11:29] [General] [Info]         /sbin
+[17:11:29] [General] [Info]         /bin
+[17:11:29] [General] [Info]         /usr/games
+[17:11:29] [General] [Info]         /usr/games/bin
+[17:11:29] [General] [Info]         /usr/local/games
+[17:11:29] [General] [Info]         /usr/local/games/bin
+[17:11:29] [General] [Info]         /snap/bin
+[17:11:29] [General] [Info]         /snap/bin
+[17:11:29] [General] [Info]         /home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk
+[17:11:29] [General] [Info]         /home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk/bin
+[17:11:29] [General] [Info]     Found at:
+[17:11:29] [General] [Info]         /home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk/bin
+[17:11:29] [General] [Info]         /snap/bin
+[17:11:29] [General] [Info]         /snap/bin
+[17:11:29] [General] [Info]         /home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk/bin
+[17:11:29] [General] [Info] Following symlink: /snap/bin/dart ==> /usr/bin/snap
+[17:11:29] [General] [Info] Target snap is not dart, assuming /snap/bin/dart is a package manager init script
+[17:11:29] [General] [Info] Following symlink: /snap/bin/dart ==> /usr/bin/snap
+[17:11:29] [General] [Info] Target snap is not dart, assuming /snap/bin/dart is a package manager init script
+[17:11:29] [General] [Info]     Candidate paths to be post-filtered:
+[17:11:29] [General] [Info]         /home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk
+[17:11:29] [General] [Info]         /snap/bin/dart
+[17:11:29] [General] [Info]         /snap/bin/dart
+[17:11:29] [General] [Info]         /home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk
+[17:11:29] [General] [Info]     Found at /home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk
+[17:11:29] [General] [Info]     Returning SDK path /home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk for dart
+[17:11:29] [General] [Info] Experiment random number is 70 for experiment 'sdkDaps'. Experiment is enabled for <= 10
+[17:11:29] [General] [Info] Experiment 'sdkDaps' does not apply and will not be activated
+[17:11:29] [General] [Info] !! PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING !!
+
+Dart Code extension: 3.60.1
+Flutter extension: 3.60.0 (not activated)
+
+App: Visual Studio Code
+Version: 1.76.1
+Platform: linux
+
+Workspace type: Flutter
+Analyzer type: LSP
+Multi-root?: false
+
+Dart SDK:
+    Loc: /home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk
+    Ver: 2.19.3
+Flutter SDK:
+    Loc: /home/fathi/snap/flutter/common/flutter
+    Ver: 3.7.6
+
+HTTP_PROXY: undefined
+NO_PROXY: undefined
+[17:11:29] [FlutterDaemon] [Error] /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so: undefined symbol: g_tls_channel_binding_error_quark
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so
+/snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+/snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+[17:11:29] [General] [Info] Loaded 20000 from vscode-userdata:/home/fathi/.config/Code/User/globalStorage/dart-code.dart-code/package_cache.json
+[17:11:30] [General] [Info] Pubspec /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/pubspec.yaml was modified
+[17:11:30] [General] [Info] Skipping package fetch because project creation is in progress
+[17:11:33] [General] [Info] Returning cached results for project search
+[17:11:33] [General] [Info] Checking 1 projects for supported platforms
+[17:11:33] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
+[17:11:33] [General] [Info] Returning cached results for project search
+[17:11:33] [General] [Info] Activating Flutter extension for Flutter project...
+[17:11:33] [General] [Info] Extension:Startup timing: 5150ms
+[17:11:33] [General] [Info] Version last used for Pub is 2.19.3 (2.19.0), current is 2.19.3 (2.19.0)
+[17:11:33] [General] [Info] Found 0 folders requiring "pub get" or "pub upgrade":
+[17:11:34] [General] [Info] !! PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING !!
+
+Dart Code extension: 3.60.1
+Flutter extension: 3.60.0 (activated)
+
+App: Visual Studio Code
+Version: 1.76.1
+Platform: linux
+
+Workspace type: Flutter
+Analyzer type: LSP
+Multi-root?: false
+
+Dart SDK:
+    Loc: /home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk
+    Ver: 2.19.3
+Flutter SDK:
+    Loc: /home/fathi/snap/flutter/common/flutter
+    Ver: 3.7.6
+
+HTTP_PROXY: undefined
+NO_PROXY: undefined
+[17:11:34] [General] [Info] Analyzer:Startup timing: 697ms
+[17:11:45] [General] [Info] Analyzer:FirstAnalysis timing: 8335ms
+[17:12:49] [General] [Info] Pubspec /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/pubspec.yaml was modified
+[17:12:50] [General] [Info] Returning cached results for project search
+[17:12:50] [General] [Info] Version last used for Pub is 2.19.3 (2.19.0), current is 2.19.3 (2.19.0)
+[17:12:50] [General] [Info] Found 0 folders requiring "pub get" or "pub upgrade":
+[17:13:07] [General] [Info] Pubspec /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/pubspec.yaml was modified
+[17:13:08] [General] [Info] Returning cached results for project search
+[17:13:08] [General] [Info] Version last used for Pub is 2.19.3 (2.19.0), current is 2.19.3 (2.19.0)
+[17:13:08] [General] [Info] Found 0 folders requiring "pub get" or "pub upgrade":
+[17:13:27] [General] [Info] Returning cached results for project search
+[17:15:37] [General] [Info] Pubspec /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/pubspec.yaml was modified
+[17:15:38] [General] [Info] Returning cached results for project search
+[17:15:38] [General] [Info] Version last used for Pub is 2.19.3 (2.19.0), current is 2.19.3 (2.19.0)
+[17:15:38] [General] [Info] Found 0 folders requiring "pub get" or "pub upgrade":
+[17:15:56] [General] [Info] Starting debug session...
+[17:15:56] [General] [Info]     workspace: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[17:15:56] [General] [Info]     program  : /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart
+[17:15:56] [General] [Info] Setting cwd based on likely entry point: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[17:15:56] [General] [Info] Using workspace as cwd: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[17:15:56] [General] [Info] Detected launch project as Flutter
+[17:15:56] [General] [Info] Using Flutter debug adapter for this session
+[17:15:56] [General] [Info] Getting DevTools server address to pass to Flutter...
+[17:15:56] [General] [Info] Checking for errors before launching
+[17:15:56] [General] [Info] Debug session starting...
+    {
+        "name": "Dart ",
+        "noDebug": false,
+        "request": "launch",
+        "type": "dart",
+        "groupId": 0,
+        "program": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart",
+        "dartCodeDebugSessionID": "session-85c49",
+        "cwd": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr",
+        "deviceId": "linux",
+        "deviceName": "Linux (linux-x64)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "additionalProjectPaths": [
+            "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr"
+        ],
+        "args": [],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "linux",
+            "--devtools-server-address",
+            "http://127.0.0.1:9101/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "/home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk",
+        "vmServiceLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/observatory.txt",
+        "maxLogLineLength": 2000,
+        "dartTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/dart_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "/home/fathi/snap/flutter/common/flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_run.txt",
+        "flutterTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_test.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[17:15:56] [General] [Info] Using flutter debugger for Flutter
+[17:15:56] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[17:15:56] [General] [Info] Running debugger via node with /home/fathi/.vscode/extensions/dart-code.dart-code-3.60.1/out/dist/debug.js    flutter
+[17:15:56] [General] [Info] Did not find session 3e126f20-c845-4dbb-87b1-0d2c9898ec0d to handle dart.progressStart. There were 0 sessions:
+[17:15:56] [General] [Info] Event will be queued and processed when the session start event fires
+[17:15:56] [General] [Info] Processing delayed event dart.progressStart for session 3e126f20-c845-4dbb-87b1-0d2c9898ec0d
+[17:15:56] [FlutterRun] [Error] [Dart ] /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so: undefined symbol: g_tls_channel_binding_error_quark
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so
+[17:15:56] [FlutterRun] [Error] [Dart ] /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+/snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+[17:16:19] [General] [Info] Returning cached results for project search
+[17:28:27] [General] [Info] Took 61ms to search for projects (5 levels)
+[17:28:27] [General] [Info] Took 30ms to filter out excluded projects (0 exclusion rules)
+[17:54:10] [General] [Info] Took 48ms to search for projects (5 levels)
+[17:54:10] [General] [Info] Took 6ms to filter out excluded projects (0 exclusion rules)
+[18:01:58] [General] [Info] Took 39ms to search for projects (5 levels)
+[18:01:58] [General] [Info] Took 10ms to filter out excluded projects (0 exclusion rules)
+[18:02:19] [General] [Info] Returning cached results for project search
+[18:29:42] [General] [Info] Took 51ms to search for projects (5 levels)
+[18:29:42] [General] [Info] Took 5ms to filter out excluded projects (0 exclusion rules)
+[18:34:40] [General] [Info] Returning cached results for project search
+[18:34:41] [General] [Info] Returning cached results for project search
+[18:45:08] [General] [Info] Took 42ms to search for projects (5 levels)
+[18:45:08] [General] [Info] Took 5ms to filter out excluded projects (0 exclusion rules)
+[18:56:05] [General] [Info] Took 44ms to search for projects (5 levels)
+[18:56:05] [General] [Info] Took 27ms to filter out excluded projects (0 exclusion rules)
+[18:57:15] [General] [Info] Returning cached results for project search
+[19:02:26] [General] [Info] Debugger:SessionDuration timing: 6389538ms (Flutter)
+[19:02:35] [General] [Info] Starting debug session...
+[19:02:35] [General] [Info]     workspace: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[19:02:35] [General] [Info]     program  : /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart
+[19:02:35] [General] [Info] Setting cwd based on likely entry point: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[19:02:35] [General] [Info] Using workspace as cwd: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[19:02:35] [General] [Info] Detected launch project as Flutter
+[19:02:35] [General] [Info] Using Flutter debug adapter for this session
+[19:02:35] [General] [Info] Getting DevTools server address to pass to Flutter...
+[19:02:35] [General] [Info] Checking for errors before launching
+[19:02:35] [General] [Info] Debug session starting...
+    {
+        "name": "Dart ",
+        "noDebug": false,
+        "request": "launch",
+        "type": "dart",
+        "groupId": 0,
+        "program": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart",
+        "dartCodeDebugSessionID": "session-4c758",
+        "cwd": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr",
+        "deviceId": "linux",
+        "deviceName": "Linux (linux-x64)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "additionalProjectPaths": [
+            "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr"
+        ],
+        "args": [],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "linux",
+            "--devtools-server-address",
+            "http://127.0.0.1:9101/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "/home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk",
+        "vmServiceLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/observatory.txt",
+        "maxLogLineLength": 2000,
+        "dartTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/dart_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "/home/fathi/snap/flutter/common/flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_run.txt",
+        "flutterTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_test.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[19:02:35] [General] [Info] Using flutter debugger for Flutter
+[19:02:35] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[19:02:35] [General] [Info] Running debugger via node with /home/fathi/.vscode/extensions/dart-code.dart-code-3.60.1/out/dist/debug.js    flutter
+[19:02:35] [General] [Info] Did not find session 000582f9-6889-476d-92d3-f1fadb6199c9 to handle dart.progressStart. There were 0 sessions:
+[19:02:35] [General] [Info] Event will be queued and processed when the session start event fires
+[19:02:35] [General] [Info] Processing delayed event dart.progressStart for session 000582f9-6889-476d-92d3-f1fadb6199c9
+[19:02:37] [FlutterRun] [Error] [Dart ] /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so: undefined symbol: g_tls_channel_binding_error_quark
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so
+[19:02:37] [FlutterRun] [Error] [Dart ] /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+/snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+[19:02:54] [General] [Info] Took 49ms to search for projects (5 levels)
+[19:02:54] [General] [Info] Took 7ms to filter out excluded projects (0 exclusion rules)
+[19:03:54] [General] [Info] Returning cached results for project search
+[19:04:57] [General] [Info] Returning cached results for project search
+[19:08:11] [General] [Info] Debugger:SessionDuration timing: 335578ms (Flutter)
+[19:08:41] [General] [Info] Starting debug session...
+[19:08:41] [General] [Info]     workspace: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[19:08:41] [General] [Info]     program  : /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart
+[19:08:41] [General] [Info] Setting cwd based on likely entry point: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[19:08:41] [General] [Info] Using workspace as cwd: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[19:08:41] [General] [Info] Detected launch project as Flutter
+[19:08:41] [General] [Info] Using Flutter debug adapter for this session
+[19:08:41] [General] [Info] Getting DevTools server address to pass to Flutter...
+[19:08:41] [General] [Info] Checking for errors before launching
+[19:08:41] [General] [Info] Debug session starting...
+    {
+        "name": "Dart ",
+        "noDebug": false,
+        "request": "launch",
+        "type": "dart",
+        "groupId": 0,
+        "program": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart",
+        "dartCodeDebugSessionID": "session-acb35",
+        "cwd": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr",
+        "deviceId": "linux",
+        "deviceName": "Linux (linux-x64)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "additionalProjectPaths": [
+            "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr"
+        ],
+        "args": [],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "linux",
+            "--devtools-server-address",
+            "http://127.0.0.1:9101/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "/home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk",
+        "vmServiceLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/observatory.txt",
+        "maxLogLineLength": 2000,
+        "dartTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/dart_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "/home/fathi/snap/flutter/common/flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_run.txt",
+        "flutterTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_test.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[19:08:41] [General] [Info] Using flutter debugger for Flutter
+[19:08:41] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[19:08:41] [General] [Info] Running debugger via node with /home/fathi/.vscode/extensions/dart-code.dart-code-3.60.1/out/dist/debug.js    flutter
+[19:08:41] [General] [Info] Did not find session 95184002-a3e0-449c-8a3c-17ab6f72c1ec to handle dart.progressStart. There were 0 sessions:
+[19:08:41] [General] [Info] Event will be queued and processed when the session start event fires
+[19:08:41] [General] [Info] Processing delayed event dart.progressStart for session 95184002-a3e0-449c-8a3c-17ab6f72c1ec
+[19:08:42] [FlutterRun] [Error] [Dart ] /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so: undefined symbol: g_tls_channel_binding_error_quark
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so
+[19:08:42] [FlutterRun] [Error] [Dart ] /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+/snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+[19:09:00] [General] [Info] Took 45ms to search for projects (5 levels)
+[19:09:00] [General] [Info] Took 6ms to filter out excluded projects (0 exclusion rules)
+[19:13:30] [General] [Info] Returning cached results for project search
+[19:20:10] [General] [Info] Took 40ms to search for projects (5 levels)
+[19:20:10] [General] [Info] Took 4ms to filter out excluded projects (0 exclusion rules)
+[20:37:04] [General] [Info] Pubspec /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/pubspec.yaml was modified
+[20:37:05] [General] [Info] Took 44ms to search for projects (5 levels)
+[20:37:05] [General] [Info] Took 10ms to filter out excluded projects (0 exclusion rules)
+[20:37:06] [General] [Info] Version last used for Pub is 2.19.3 (2.19.0), current is 2.19.3 (2.19.0)
+[20:37:06] [General] [Info] Found 0 folders requiring "pub get" or "pub upgrade":
+[20:40:41] [General] [Info] Pubspec /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/pubspec.yaml was modified
+[20:40:42] [General] [Info] Returning cached results for project search
+[20:40:42] [General] [Info] Version last used for Pub is 2.19.3 (2.19.0), current is 2.19.3 (2.19.0)
+[20:40:42] [General] [Info] Found 1 folders requiring "pub get" or "pub upgrade":
+    /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr (get: true, upgrade: false)
+[20:58:05] [General] [Info] Took 64ms to search for projects (5 levels)
+[20:58:05] [General] [Info] Took 14ms to filter out excluded projects (0 exclusion rules)
+[21:05:04] [General] [Info] Caching Pub package names from https://pub.dev...
+[21:05:05] [General] [Info] Saved 20000 in vscode-userdata:/home/fathi/.config/Code/User/globalStorage/dart-code.dart-code/package_cache.json
+[21:12:01] [General] [Info] Took 57ms to search for projects (5 levels)
+[21:12:01] [General] [Info] Took 4ms to filter out excluded projects (0 exclusion rules)
+[21:12:41] [General] [Info] Returning cached results for project search
+[21:12:45] [General] [Info] Returning cached results for project search
+[21:17:14] [General] [Info] Debugger:SessionDuration timing: 7712385ms (Flutter)
+[21:17:20] [General] [Info] Starting debug session...
+[21:17:20] [General] [Info]     workspace: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[21:17:20] [General] [Info]     program  : /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart
+[21:17:20] [General] [Info] Setting cwd based on likely entry point: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[21:17:20] [General] [Info] Using workspace as cwd: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[21:17:20] [General] [Info] Detected launch project as Flutter
+[21:17:20] [General] [Info] Using Flutter debug adapter for this session
+[21:17:20] [General] [Info] Getting DevTools server address to pass to Flutter...
+[21:17:20] [General] [Info] Checking for errors before launching
+[21:17:20] [General] [Info] Debug session starting...
+    {
+        "name": "Dart ",
+        "noDebug": false,
+        "request": "launch",
+        "type": "dart",
+        "groupId": 0,
+        "program": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart",
+        "dartCodeDebugSessionID": "session-463b8",
+        "cwd": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr",
+        "deviceId": "linux",
+        "deviceName": "Linux (linux-x64)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "additionalProjectPaths": [
+            "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr"
+        ],
+        "args": [],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "linux",
+            "--devtools-server-address",
+            "http://127.0.0.1:9101/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "/home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk",
+        "vmServiceLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/observatory.txt",
+        "maxLogLineLength": 2000,
+        "dartTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/dart_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "/home/fathi/snap/flutter/common/flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_run.txt",
+        "flutterTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_test.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[21:17:20] [General] [Info] Using flutter debugger for Flutter
+[21:17:20] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[21:17:20] [General] [Info] Running debugger via node with /home/fathi/.vscode/extensions/dart-code.dart-code-3.60.1/out/dist/debug.js    flutter
+[21:17:20] [General] [Info] Did not find session a59288cf-3254-4c53-9a0b-e2f7964f9f9c to handle dart.progressStart. There were 0 sessions:
+[21:17:20] [General] [Info] Event will be queued and processed when the session start event fires
+[21:17:20] [General] [Info] Processing delayed event dart.progressStart for session a59288cf-3254-4c53-9a0b-e2f7964f9f9c
+[21:17:20] [FlutterRun] [Error] [Dart ] /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so: undefined symbol: g_tls_channel_binding_error_quark
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so
+[21:17:20] [FlutterRun] [Error] [Dart ] /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+/snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+[21:17:38] [General] [Info] Took 55ms to search for projects (5 levels)
+[21:17:38] [General] [Info] Took 4ms to filter out excluded projects (0 exclusion rules)
+[21:18:08] [General] [Info] Returning cached results for project search
+[21:48:21] [General] [Info] Took 59ms to search for projects (5 levels)
+[21:48:21] [General] [Info] Took 22ms to filter out excluded projects (0 exclusion rules)
+[21:50:58] [FlutterRun] [Error] [Dart ] lib/view/provider.dart:8:38: Error: Can't find '}' to match '{'.
+[21:50:58] [FlutterRun] [Error] [Dart ]   Widget build(BuildContext context) {
+                                     ^
+[21:50:58] [FlutterRun] [Error] [Dart ] lib/view/provider.dart:4:41: Error: Can't find '}' to match '{'.
+[21:50:58] [FlutterRun] [Error] [Dart ] class Providers extends StatelessWidget {
+                                        ^
+[21:51:01] [FlutterRun] [Error] [Dart ] lib/view/provider.dart:8:38: Error: Can't find '}' to match '{'.
+[21:51:01] [FlutterRun] [Error] [Dart ]   Widget build(BuildContext context) {
+                                     ^
+lib/view/provider.dart:4:41: Error: Can't find '}' to match '{'.
+class Providers extends StatelessWidget {
+[21:51:01] [FlutterRun] [Error] [Dart ]                                         ^
+[21:51:12] [FlutterRun] [Error] [Dart ] lib/view/provider.dart:8:38: Error: Can't find '}' to match '{'.
+[21:51:12] [FlutterRun] [Error] [Dart ]   Widget build(BuildContext context) {
+                                     ^
+lib/view/provider.dart:4:41: Error: Can't find '}' to match '{'.
+class Providers extends StatelessWidget {
+                                        ^
+[21:51:37] [FlutterRun] [Error] [Dart ] lib/view/provider.dart:8:38: Error: Can't find '}' to match '{'.
+[21:51:37] [FlutterRun] [Error] [Dart ]   Widget build(BuildContext context) {
+                                     ^
+lib/view/provider.dart:4:41: Error: Can't find '}' to match '{'.
+class Providers extends StatelessWidget {
+                                        ^
+[21:51:42] [General] [Info] Debugger:SessionDuration timing: 2061754ms (Flutter)
+[21:52:00] [General] [Info] Starting debug session...
+[21:52:00] [General] [Info]     workspace: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[21:52:00] [General] [Info]     program  : /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart
+[21:52:00] [General] [Info] Setting cwd based on likely entry point: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[21:52:00] [General] [Info] Using workspace as cwd: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[21:52:00] [General] [Info] Detected launch project as Flutter
+[21:52:00] [General] [Info] Using Flutter debug adapter for this session
+[21:52:00] [General] [Info] Getting DevTools server address to pass to Flutter...
+[21:52:00] [General] [Info] Checking for errors before launching
+[21:52:00] [General] [Info] Debug session starting...
+    {
+        "name": "Dart ",
+        "noDebug": false,
+        "request": "launch",
+        "type": "dart",
+        "groupId": 0,
+        "program": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart",
+        "dartCodeDebugSessionID": "session-cdd3b",
+        "cwd": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr",
+        "deviceId": "linux",
+        "deviceName": "Linux (linux-x64)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "additionalProjectPaths": [
+            "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr"
+        ],
+        "args": [],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "linux",
+            "--devtools-server-address",
+            "http://127.0.0.1:9101/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "/home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk",
+        "vmServiceLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/observatory.txt",
+        "maxLogLineLength": 2000,
+        "dartTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/dart_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "/home/fathi/snap/flutter/common/flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_run.txt",
+        "flutterTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_test.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[21:52:00] [General] [Info] Using flutter debugger for Flutter
+[21:52:00] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[21:52:00] [General] [Info] Running debugger via node with /home/fathi/.vscode/extensions/dart-code.dart-code-3.60.1/out/dist/debug.js    flutter
+[21:52:00] [General] [Info] Did not find session 943645cd-4cf7-489e-a59b-436309c56423 to handle dart.progressStart. There were 0 sessions:
+[21:52:00] [General] [Info] Event will be queued and processed when the session start event fires
+[21:52:01] [General] [Info] Processing delayed event dart.progressStart for session 943645cd-4cf7-489e-a59b-436309c56423
+[21:52:01] [FlutterRun] [Error] [Dart ] /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so: undefined symbol: g_tls_channel_binding_error_quark
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so
+[21:52:01] [FlutterRun] [Error] [Dart ] /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+/snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+[21:52:14] [General] [Info] Returning cached results for project search
+[21:55:49] [General] [Info] Took 53ms to search for projects (5 levels)
+[21:55:49] [General] [Info] Took 4ms to filter out excluded projects (0 exclusion rules)
+[21:58:43] [General] [Info] Returning cached results for project search
+[22:23:04] [General] [Info] Took 47ms to search for projects (5 levels)
+[22:23:04] [General] [Info] Took 6ms to filter out excluded projects (0 exclusion rules)
+[22:24:33] [General] [Info] Returning cached results for project search
+[22:29:29] [General] [Info] Debugger:SessionDuration timing: 2248472ms (Flutter)
+[22:29:42] [General] [Info] Starting debug session...
+[22:29:42] [General] [Info]     workspace: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[22:29:42] [General] [Info]     program  : /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart
+[22:29:42] [General] [Info] Setting cwd based on likely entry point: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[22:29:42] [General] [Info] Using workspace as cwd: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[22:29:42] [General] [Info] Detected launch project as Flutter
+[22:29:42] [General] [Info] Using Flutter debug adapter for this session
+[22:29:42] [General] [Info] Getting DevTools server address to pass to Flutter...
+[22:29:42] [General] [Info] Checking for errors before launching
+[22:29:42] [General] [Info] Debug session starting...
+    {
+        "name": "Dart ",
+        "noDebug": false,
+        "request": "launch",
+        "type": "dart",
+        "groupId": 0,
+        "program": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart",
+        "dartCodeDebugSessionID": "session-9eae2",
+        "cwd": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr",
+        "deviceId": "linux",
+        "deviceName": "Linux (linux-x64)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "additionalProjectPaths": [
+            "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr"
+        ],
+        "args": [],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "linux",
+            "--devtools-server-address",
+            "http://127.0.0.1:9101/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "/home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk",
+        "vmServiceLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/observatory.txt",
+        "maxLogLineLength": 2000,
+        "dartTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/dart_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "/home/fathi/snap/flutter/common/flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_run.txt",
+        "flutterTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_test.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[22:29:42] [General] [Info] Using flutter debugger for Flutter
+[22:29:42] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[22:29:42] [General] [Info] Running debugger via node with /home/fathi/.vscode/extensions/dart-code.dart-code-3.60.1/out/dist/debug.js    flutter
+[22:29:42] [General] [Info] Did not find session 8264e30e-f100-4dcd-a33b-cfc81538d016 to handle dart.progressStart. There were 0 sessions:
+[22:29:42] [General] [Info] Event will be queued and processed when the session start event fires
+[22:29:43] [General] [Info] Processing delayed event dart.progressStart for session 8264e30e-f100-4dcd-a33b-cfc81538d016
+[22:29:43] [FlutterRun] [Error] [Dart ] /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so: undefined symbol: g_tls_channel_binding_error_quark
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so
+[22:29:43] [FlutterRun] [Error] [Dart ] /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+[22:29:43] [FlutterRun] [Error] [Dart ] /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+[22:30:13] [General] [Info] Took 55ms to search for projects (5 levels)
+[22:30:13] [General] [Info] Took 7ms to filter out excluded projects (0 exclusion rules)
+[22:30:43] [General] [Info] Returning cached results for project search
+[22:32:25] [General] [Info] Returning cached results for project search
+[22:32:28] [General] [Info] Debugger:SessionDuration timing: 165914ms (Flutter)
+[22:32:33] [General] [Info] Starting debug session...
+[22:32:33] [General] [Info]     workspace: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[22:32:33] [General] [Info]     program  : /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart
+[22:32:33] [General] [Info] Setting cwd based on likely entry point: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[22:32:33] [General] [Info] Using workspace as cwd: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[22:32:33] [General] [Info] Detected launch project as Flutter
+[22:32:33] [General] [Info] Using Flutter debug adapter for this session
+[22:32:33] [General] [Info] Getting DevTools server address to pass to Flutter...
+[22:32:33] [General] [Info] Checking for errors before launching
+[22:32:33] [General] [Info] Debug session starting...
+    {
+        "name": "Dart ",
+        "noDebug": false,
+        "request": "launch",
+        "type": "dart",
+        "groupId": 0,
+        "program": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart",
+        "dartCodeDebugSessionID": "session-c3086",
+        "cwd": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr",
+        "deviceId": "linux",
+        "deviceName": "Linux (linux-x64)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "additionalProjectPaths": [
+            "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr"
+        ],
+        "args": [],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "linux",
+            "--devtools-server-address",
+            "http://127.0.0.1:9101/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "/home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk",
+        "vmServiceLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/observatory.txt",
+        "maxLogLineLength": 2000,
+        "dartTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/dart_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "/home/fathi/snap/flutter/common/flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_run.txt",
+        "flutterTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_test.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[22:32:33] [General] [Info] Using flutter debugger for Flutter
+[22:32:33] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[22:32:33] [General] [Info] Running debugger via node with /home/fathi/.vscode/extensions/dart-code.dart-code-3.60.1/out/dist/debug.js    flutter
+[22:32:33] [General] [Info] Did not find session 81a9545b-99fe-483c-a07a-c1412a85cf2d to handle dart.progressStart. There were 0 sessions:
+[22:32:33] [General] [Info] Event will be queued and processed when the session start event fires
+[22:32:33] [General] [Info] Processing delayed event dart.progressStart for session 81a9545b-99fe-483c-a07a-c1412a85cf2d
+[22:32:33] [FlutterRun] [Error] [Dart ] /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so: undefined symbol: g_tls_channel_binding_error_quark
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so
+[22:32:33] [FlutterRun] [Error] [Dart ] /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+[22:32:33] [FlutterRun] [Error] [Dart ] /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+[22:32:45] [General] [Info] Returning cached results for project search
+[22:36:37] [General] [Info] Took 42ms to search for projects (5 levels)
+[22:36:37] [General] [Info] Took 6ms to filter out excluded projects (0 exclusion rules)
+[22:36:50] [General] [Info] Returning cached results for project search
+[22:37:14] [General] [Info] Returning cached results for project search
+[22:37:15] [General] [Info] Returning cached results for project search
+[22:40:40] [FlutterRun] [Error] [Dart ] lib/view/provider.dart:45:51: Error: The method 'ww' isn't defined for the class 'Providers'.
+[22:40:40] [FlutterRun] [Error] [Dart ]  - 'Providers' is from 'package:mahr/view/provider.dart' ('lib/view/provider.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'ww'.
+                              onTap: () => Get.to(ww()),
+                                                  ^^
+[22:40:54] [General] [Info] Returning cached results for project search
+[22:40:56] [General] [Info] Returning cached results for project search
+[22:41:06] [General] [Info] Debugger:SessionDuration timing: 512858ms (Flutter)
+[22:41:20] [General] [Info] Starting debug session...
+[22:41:20] [General] [Info]     workspace: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[22:41:20] [General] [Info]     program  : /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart
+[22:41:20] [General] [Info] Setting cwd based on likely entry point: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[22:41:20] [General] [Info] Using workspace as cwd: /media/fathi/New Volume/flutter_pre/Fathiwehba/mahr
+[22:41:20] [General] [Info] Detected launch project as Flutter
+[22:41:20] [General] [Info] Using Flutter debug adapter for this session
+[22:41:20] [General] [Info] Getting DevTools server address to pass to Flutter...
+[22:41:20] [General] [Info] Checking for errors before launching
+[22:41:20] [General] [Info] Debug session starting...
+    {
+        "name": "Dart ",
+        "noDebug": false,
+        "request": "launch",
+        "type": "dart",
+        "groupId": 0,
+        "program": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/lib/main.dart",
+        "dartCodeDebugSessionID": "session-bddd8",
+        "cwd": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr",
+        "deviceId": "linux",
+        "deviceName": "Linux (linux-x64)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "additionalProjectPaths": [
+            "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr"
+        ],
+        "args": [],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "linux",
+            "--devtools-server-address",
+            "http://127.0.0.1:9101/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "/home/fathi/snap/flutter/common/flutter/bin/cache/dart-sdk",
+        "vmServiceLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/observatory.txt",
+        "maxLogLineLength": 2000,
+        "dartTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/dart_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "/home/fathi/snap/flutter/common/flutter",
+        "useInspectorNotificationsForWidgetErrors": false,
+        "flutterRunLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_run.txt",
+        "flutterTestLogFile": "/media/fathi/New Volume/flutter_pre/Fathiwehba/mahr/logs/flutter_test.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[22:41:20] [General] [Info] Using flutter debugger for Flutter
+[22:41:20] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[22:41:20] [General] [Info] Running debugger via node with /home/fathi/.vscode/extensions/dart-code.dart-code-3.60.1/out/dist/debug.js    flutter
+[22:41:21] [General] [Info] Did not find session 4737879d-ec61-4f9a-9606-7f33863c1d2d to handle dart.progressStart. There were 0 sessions:
+[22:41:21] [General] [Info] Event will be queued and processed when the session start event fires
+[22:41:21] [General] [Info] Processing delayed event dart.progressStart for session 4737879d-ec61-4f9a-9606-7f33863c1d2d
+[22:41:21] [FlutterRun] [Error] [Dart ] /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so: undefined symbol: g_tls_channel_binding_error_quark
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgiognutls.so
+[22:41:21] [FlutterRun] [Error] [Dart ] /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+[22:41:21] [FlutterRun] [Error] [Dart ] /snap/flutter/130/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/../../../../lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so)
+Failed to load module: /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+[22:41:35] [General] [Info] Returning cached results for project search
+[23:04:55] [General] [Info] Took 34ms to search for projects (5 levels)
+[23:04:55] [General] [Info] Took 10ms to filter out excluded projects (0 exclusion rules)
+[23:04:55] [General] [Info] Checking 1 projects for supported platforms
+[23:04:55] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
+[23:05:01] [General] [Info] Debugger:SessionDuration timing: 1420493ms (Flutter)
+Fri Mar 10 2023 [23:05:43 GMT+0200 (Eastern European Standard Time)] Log file ended
