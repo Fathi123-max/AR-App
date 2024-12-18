@@ -1,12 +1,11 @@
 import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:movie_app/features/movies/domain/entities/movie.dart';
 
 part 'movie_model.g.dart';
 
-@HiveType(typeId: 1)
+@HiveType(typeId: 33)
 @JsonSerializable()
-class MovieModel extends Movie {
+class MovieModel {
   @override
   @HiveField(1)
   @JsonKey(name: "adult")
@@ -63,6 +62,12 @@ class MovieModel extends Movie {
   @HiveField(27)
   @JsonKey(name: "vote_count")
   int? voteCount;
+  //isFavorite
+  @HiveField(29)
+  bool isFavorite = false;
+  //isWatchlisted
+  @HiveField(30)
+  bool isWatchlisted = false;
 
   MovieModel({
     this.adult,
@@ -79,10 +84,50 @@ class MovieModel extends Movie {
     this.video,
     this.voteAverage,
     this.voteCount,
+    this.isFavorite = false,
+    this.isWatchlisted = false,
   });
 
   factory MovieModel.fromJson(Map<String, dynamic> json) =>
       _$MovieModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$MovieModelToJson(this);
+
+  MovieModel copyWith({
+    bool? adult,
+    String? backdropPath,
+    List<int>? genreIds,
+    int? id,
+    String? originalLanguage,
+    String? originalTitle,
+    String? overview,
+    double? popularity,
+    String? posterPath,
+    DateTime? releaseDate,
+    String? title,
+    bool? video,
+    int? voteAverage,
+    int? voteCount,
+    bool? isFavorite,
+    bool? isWatchlisted,
+  }) {
+    return MovieModel(
+      adult: adult ?? this.adult,
+      backdropPath: backdropPath ?? this.backdropPath,
+      genreIds: genreIds ?? this.genreIds,
+      id: id ?? this.id,
+      originalLanguage: originalLanguage ?? this.originalLanguage,
+      originalTitle: originalTitle ?? this.originalTitle,
+      overview: overview ?? this.overview,
+      popularity: popularity ?? this.popularity,
+      posterPath: posterPath ?? this.posterPath,
+      releaseDate: releaseDate ?? this.releaseDate,
+      title: title ?? this.title,
+      video: video ?? this.video,
+      voteAverage: voteAverage ?? this.voteAverage,
+      voteCount: voteCount ?? this.voteCount,
+      isFavorite: isFavorite ?? this.isFavorite,
+      isWatchlisted: isWatchlisted ?? this.isWatchlisted,
+    );
+  }
 }

@@ -1,4 +1,7 @@
 import 'package:get_it/get_it.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:movie_app/features/movies/data/models/movie_model.dart';
 import '../../features/movies/data/datasources/movie_local_data_source.dart';
 import '../../features/movies/data/datasources/movie_remote_data_source.dart';
 import '../../features/movies/data/repositories/movie_repository_impl.dart';
@@ -10,7 +13,9 @@ final sl = GetIt.instance;
 
 Future<void> initializeDependencies() async {
   // Initialize modules
-  await DatabaseModule.init();
+  // await Hive.initFlutter();
+  // Hive.registerAdapter(MovieModelAdapter());
+  // await DatabaseModule.init();
 
   // External dependencies
 

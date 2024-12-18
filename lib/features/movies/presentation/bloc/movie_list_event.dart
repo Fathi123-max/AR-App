@@ -24,13 +24,13 @@ class LoadWatchlist extends MovieListEvent {
 }
 
 class ToggleFavorite extends MovieListEvent {
-  final Movie movie;
+  final MovieModel movie;
 
   const ToggleFavorite(this.movie);
 }
 
 class ToggleWatchlist extends MovieListEvent {
-  final Movie movie;
+  final MovieModel movie;
 
   const ToggleWatchlist(this.movie);
 }

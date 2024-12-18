@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import '../../domain/entities/movie.dart';
+import 'package:movie_app/features/movies/data/models/movie_model.dart';
 import '../../domain/repositories/movie_repository.dart';
 
 part 'movie_list_event.dart';

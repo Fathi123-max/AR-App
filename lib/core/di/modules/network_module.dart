@@ -3,7 +3,6 @@ import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 import 'package:dio_cache_interceptor_hive_store/dio_cache_interceptor_hive_store.dart';
 import 'package:movie_app/core/constants/api_constants.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 class DioService {
   late final Dio _dio;

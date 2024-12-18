@@ -16,7 +16,7 @@ class MovieRepositoryImpl implements MovieRepository {
   });
 
   @override
-  Future<Either<Failure, List<Movie>>> getPopularMovies(
+  Future<Either<Failure, List<MovieModel>>> getPopularMovies(
       {required int page}) async {
     try {
       final movies = await remoteDataSource.getDocumentMovies(page);
@@ -27,7 +27,7 @@ class MovieRepositoryImpl implements MovieRepository {
   }
 
   @override
-  Future<Either<Failure, Movie>> getMovieDetails(int id) async {
+  Future<Either<Failure, MovieModel>> getMovieDetails(int id) async {
     try {
       final movie = await remoteDataSource.getMovieDetails(id);
       return Right(movie);
@@ -37,7 +37,7 @@ class MovieRepositoryImpl implements MovieRepository {
   }
 
   @override
-  Future<Either<Failure, List<Movie>>> getFavoriteMovies() async {
+  Future<Either<Failure, List<MovieModel>>> getFavoriteMovies() async {
     try {
       final movies = await localDataSource.getFavoriteMovies();
       return Right(movies);
@@ -47,7 +47,7 @@ class MovieRepositoryImpl implements MovieRepository {
   }
 
   @override
-  Future<Either<Failure, List<Movie>>> getWatchlistMovies() async {
+  Future<Either<Failure, List<MovieModel>>> getWatchlistMovies() async {
     try {
       final movies = await localDataSource.getWatchlistMovies();
       return Right(movies);
@@ -57,9 +57,9 @@ class MovieRepositoryImpl implements MovieRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> toggleFavorite(Movie movie) async {
+  Future<Either<Failure, bool>> toggleFavorite(MovieModel movie) async {
     try {
-      await localDataSource.toggleFavorite(movie as MovieModel);
+      await localDataSource.toggleFavorite(movie);
       return const Right(true);
     } catch (e) {
       return Left(CacheFailure(e.toString()));
@@ -67,9 +67,9 @@ class MovieRepositoryImpl implements MovieRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> toggleWatchlist(Movie movie) async {
+  Future<Either<Failure, bool>> toggleWatchlist(MovieModel movie) async {
     try {
-      await localDataSource.toggleWatchlist(movie as MovieModel);
+      await localDataSource.toggleWatchlist(movie);
 
       return const Right(true);
     } catch (e) {

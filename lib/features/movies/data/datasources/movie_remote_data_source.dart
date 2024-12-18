@@ -31,7 +31,7 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
           return MovieModel.fromJson(movie);
         }).toList();
       } else {
-        throw ServerFailure('Failed to fetch popular movies');
+        throw const ServerFailure('Failed to fetch popular movies');
       }
     } catch (e) {
       throw ServerFailure(e.toString());
@@ -51,7 +51,7 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
       if (response.statusCode == 200) {
         return MovieModel.fromJson(response.data);
       } else {
-        throw ServerFailure('Failed to fetch movie details');
+        throw const ServerFailure('Failed to fetch movie details');
       }
     } catch (e) {
       throw ServerFailure(e.toString());

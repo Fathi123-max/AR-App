@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../features/movies/domain/entities/movie.dart';
+import 'package:movie_app/features/movies/data/models/movie_model.dart';
 import '../../features/movies/presentation/pages/movie_details_page.dart';
 import '../../features/movies/presentation/pages/movie_list_page.dart';
 
@@ -14,9 +14,10 @@ class AppRouter {
           builder: (_) => const MovieListPage(),
         );
       case movieDetails:
-        final movie = settings.arguments as Movie;
+        final movie = settings.arguments as MovieModel;
         return PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) => MovieDetailsPage(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              MovieDetailsPage(
             movie: movie,
           ),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {

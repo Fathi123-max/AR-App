@@ -1,12 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:movie_app/features/movies/data/models/movie_model.dart';
 import 'package:movie_app/features/movies/presentation/widgets/shimmer_placeholder.dart';
 import '../../../../core/constants/api_constants.dart';
 import '../../domain/entities/movie.dart';
 
 class AnimatedMovieCard extends StatefulWidget {
-  final Movie movie;
+  final MovieModel movie;
   final VoidCallback onTap;
   final bool isHorizontal;
 
@@ -117,7 +118,7 @@ class _AnimatedMovieCardState extends State<AnimatedMovieCard>
                             const SizedBox(height: 4),
                             Row(
                               children: [
-                                FaIcon(
+                                const FaIcon(
                                   FontAwesomeIcons.star,
                                   color: Colors.yellow,
                                   size: 16,

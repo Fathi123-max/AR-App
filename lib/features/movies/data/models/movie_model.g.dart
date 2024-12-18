@@ -8,7 +8,7 @@ part of 'movie_model.dart';
 
 class MovieModelAdapter extends TypeAdapter<MovieModel> {
   @override
-  final int typeId = 1;
+  final int typeId = 33;
 
   @override
   MovieModel read(BinaryReader reader) {
@@ -31,13 +31,15 @@ class MovieModelAdapter extends TypeAdapter<MovieModel> {
       video: fields[23] as bool?,
       voteAverage: fields[25] as int?,
       voteCount: fields[27] as int?,
+      isFavorite: fields[29] as bool,
+      isWatchlisted: fields[30] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, MovieModel obj) {
     writer
-      ..writeByte(14)
+      ..writeByte(16)
       ..writeByte(1)
       ..write(obj.adult)
       ..writeByte(3)
@@ -65,7 +67,11 @@ class MovieModelAdapter extends TypeAdapter<MovieModel> {
       ..writeByte(25)
       ..write(obj.voteAverage)
       ..writeByte(27)
-      ..write(obj.voteCount);
+      ..write(obj.voteCount)
+      ..writeByte(29)
+      ..write(obj.isFavorite)
+      ..writeByte(30)
+      ..write(obj.isWatchlisted);
   }
 
   @override
@@ -102,6 +108,8 @@ MovieModel _$MovieModelFromJson(Map<String, dynamic> json) => MovieModel(
       video: json['video'] as bool?,
       voteAverage: (json['vote_average'] as num?)?.toInt(),
       voteCount: (json['vote_count'] as num?)?.toInt(),
+      isFavorite: json['isFavorite'] as bool? ?? false,
+      isWatchlisted: json['isWatchlisted'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$MovieModelToJson(MovieModel instance) =>
@@ -120,4 +128,6 @@ Map<String, dynamic> _$MovieModelToJson(MovieModel instance) =>
       'video': instance.video,
       'vote_average': instance.voteAverage,
       'vote_count': instance.voteCount,
+      'isFavorite': instance.isFavorite,
+      'isWatchlisted': instance.isWatchlisted,
     };

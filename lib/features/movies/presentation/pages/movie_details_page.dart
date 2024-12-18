@@ -2,14 +2,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:movie_app/features/movies/data/models/movie_model.dart';
 import 'package:movie_app/features/movies/presentation/bloc/movie_list_bloc.dart';
 import 'package:movie_app/features/movies/presentation/widgets/animated_watchlist_button.dart';
 import '../../../../core/constants/api_constants.dart';
-import '../../domain/entities/movie.dart';
 import '../widgets/animated_favorite_button.dart';
 
 class MovieDetailsPage extends StatelessWidget {
-  final Movie movie;
+  final MovieModel movie;
 
   const MovieDetailsPage({
     Key? key,

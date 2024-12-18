@@ -3,15 +3,43 @@ import '../../../features/movies/data/models/movie_model.dart';
 
 class DatabaseModule {
   static Future<void> init() async {
-    await Hive.initFlutter();
-    Hive.registerAdapter(MovieModelAdapter());
+    // await Hive.initFlutter();
+    // Hive.registerAdapter(MovieModelAdapter());
   }
 
   static Future<Box<MovieModel>> openFavoritesBox() async {
-    return await Hive.openBox<MovieModel>('favorites');
+    try {
+      // Log the attempt to open the favorites box
+      print("Attempting to open the favorites box...");
+
+      bool isOpen = Hive.isBoxOpen('favorites');
+      if (isOpen == null) {
+        print("Error: Hive.isBoxOpen returned null.");
+        throw Exception("Hive.isBoxOpen returned null.");
+      }
+
+      if (!isOpen) {
+        print("Favorites box is not open. Opening now...");
+        return await Hive.openBox<MovieModel>('favorites');
+      }
+
+      print("Favorites box is already open.");
+      return Hive.box<MovieModel>('favorites');
+    } catch (e) {
+      print("Error opening favorites box: $e");
+      rethrow;
+    }
   }
 
   static Future<Box<MovieModel>> openWatchlistBox() async {
-    return await Hive.openBox<MovieModel>('watchlist');
+    try {
+      if (!Hive.isBoxOpen('watchlist')) {
+        return await Hive.openBox<MovieModel>('watchlist');
+      }
+      return Hive.box<MovieModel>('watchlist');
+    } catch (e) {
+      // Add error handling or logging as needed
+      rethrow;
+    }
   }
 }

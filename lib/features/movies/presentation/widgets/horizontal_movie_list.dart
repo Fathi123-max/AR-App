@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../domain/entities/movie.dart';
+import 'package:movie_app/features/movies/data/models/movie_model.dart';
 import 'animated_movie_card.dart';
 
 class HorizontalMovieList extends StatelessWidget {
   final String title;
-  final List<Movie> movies;
-  final Function(Movie) onMovieTap;
+  final List<MovieModel> movies;
+  final Function(MovieModel) onMovieTap;
   final bool showEmptyMessage;
 
   const HorizontalMovieList({

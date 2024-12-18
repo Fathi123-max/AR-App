@@ -4,9 +4,9 @@ enum MovieListStatus { initial, loading, success, failure }
 
 class MovieListState extends Equatable {
   final MovieListStatus status;
-  final List<Movie> movies;
-  final List<Movie> favoriteMovies;
-  final List<Movie> watchlistMovies;
+  final List<MovieModel> movies;
+  final List<MovieModel> favoriteMovies;
+  final List<MovieModel> watchlistMovies;
   final bool hasReachedMax;
   final String? error;
 
@@ -21,9 +21,9 @@ class MovieListState extends Equatable {
 
   MovieListState copyWith({
     MovieListStatus? status,
-    List<Movie>? movies,
-    List<Movie>? favoriteMovies,
-    List<Movie>? watchlistMovies,
+    List<MovieModel>? movies,
+    List<MovieModel>? favoriteMovies,
+    List<MovieModel>? watchlistMovies,
     bool? hasReachedMax,
     String? error,
   }) {
