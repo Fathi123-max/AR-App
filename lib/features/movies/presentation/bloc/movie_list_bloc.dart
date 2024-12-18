@@ -15,6 +15,55 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
     on<LoadMoreMovies>(_onLoadMoreMovies);
     on<LoadFavorites>(_onLoadFavorites);
     on<LoadWatchlist>(_onLoadWatchlist);
+    on<ToggleFavorite>(_onToggleFavorite);
+    on<ToggleWatchlist>(_onToggleWatchlist);
+  }
+  Future<void> _onToggleFavorite(
+    ToggleFavorite event,
+    Emitter<MovieListState> emit,
+  ) async {
+    final result = await repository.toggleFavorite(event.movie);
+
+    result.fold(
+      (failure) => emit(state.copyWith(
+        status: MovieListStatus.failure,
+        error: failure.message,
+      )),
+      (isFavorite) => emit(state.copyWith(
+        movies: state.movies.map((movie) {
+          if (movie.id == event.movie.id) {
+            return movie.copyWith(isFavorite: isFavorite);
+          }
+          return movie;
+        }).toList(),
+      )),
+    );
+  }
+
+  Future<void> _onToggleWatchlist(
+    ToggleWatchlist event,
+    Emitter<MovieListState> emit,
+  ) async {
+    final result = await repository.toggleWatchlist(event.movie);
+    print("ToggleWatchlist result: $result"); // Debugging line
+
+    result.fold(
+      (failure) => emit(state.copyWith(
+        status: MovieListStatus.failure,
+        error: failure.message,
+      )),
+      (isWatchlisted) {
+        print("Is Watchlisted: $isWatchlisted"); // Debugging line
+        emit(state.copyWith(
+          movies: state.movies.map((movie) {
+            if (movie.id == event.movie.id) {
+              return movie.copyWith(isWatchlisted: isWatchlisted);
+            }
+            return movie;
+          }).toList(),
+        ));
+      },
+    );
   }
 
   Future<void> _onLoadMovies(
@@ -22,9 +71,9 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
     Emitter<MovieListState> emit,
   ) async {
     emit(state.copyWith(status: MovieListStatus.loading));
-    
+
     final result = await repository.getPopularMovies(page: 1);
-    
+
     result.fold(
       (failure) => emit(state.copyWith(
         status: MovieListStatus.failure,
@@ -46,11 +95,11 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
     Emitter<MovieListState> emit,
   ) async {
     if (state.hasReachedMax) return;
-    
+
     emit(state.copyWith(status: MovieListStatus.loading));
-    
+
     final result = await repository.getPopularMovies(page: _currentPage + 1);
-    
+
     result.fold(
       (failure) => emit(state.copyWith(
         status: MovieListStatus.failure,
@@ -72,7 +121,7 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
     Emitter<MovieListState> emit,
   ) async {
     final result = await repository.getFavoriteMovies();
-    
+
     result.fold(
       (failure) => emit(state.copyWith(
         status: MovieListStatus.failure,
@@ -87,7 +136,7 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
     Emitter<MovieListState> emit,
   ) async {
     final result = await repository.getWatchlistMovies();
-    
+
     result.fold(
       (failure) => emit(state.copyWith(
         status: MovieListStatus.failure,

@@ -1,5 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:movie_app/features/movies/presentation/bloc/movie_list_bloc.dart';
 import 'package:movie_app/features/movies/presentation/widgets/animated_watchlist_button.dart';
 import '../../../../core/constants/api_constants.dart';
 import '../../domain/entities/movie.dart';
@@ -19,6 +22,12 @@ class MovieDetailsPage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            leading: IconButton(
+              icon: const FaIcon(FontAwesomeIcons.arrowLeft),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
             expandedHeight: 300,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
@@ -48,16 +57,32 @@ class MovieDetailsPage extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          AnimatedFavoriteButton(
-                            isFavorite: movie.isFavorite ?? false,
-                            onPressed: () {
-                              // TODO: Implement favorite toggle
+                          BlocBuilder<MovieListBloc, MovieListState>(
+                            buildWhen: (p, c) =>
+                                p.favoriteMovies != c.favoriteMovies,
+                            builder: (context, state) {
+                              return AnimatedFavoriteButton(
+                                isFavorite: movie.isFavorite ?? false,
+                                onPressed: () {
+                                  context
+                                      .read<MovieListBloc>()
+                                      .add(ToggleFavorite(movie));
+                                },
+                              );
                             },
                           ),
-                          AnimatedWatchlistButton(
-                            isWatchlisted: movie.isWatchlisted ?? false,
-                            onPressed: () {
-                              // TODO: Implement watchlist toggle
+                          BlocBuilder<MovieListBloc, MovieListState>(
+                            buildWhen: (p, c) =>
+                                p.watchlistMovies != c.watchlistMovies,
+                            builder: (context, state) {
+                              return AnimatedWatchlistButton(
+                                isWatchlisted: movie.isWatchlisted ?? false,
+                                onPressed: () {
+                                  context
+                                      .read<MovieListBloc>()
+                                      .add(ToggleWatchlist(movie));
+                                },
+                              );
                             },
                           ),
                         ],
@@ -67,7 +92,11 @@ class MovieDetailsPage extends StatelessWidget {
                   const SizedBox(height: 8),
                   Row(
                     children: [
-                      const Icon(Icons.star, color: Colors.amber),
+                      const FaIcon(
+                        FontAwesomeIcons.star,
+                        color: Colors.yellow,
+                        size: 16,
+                      ),
                       const SizedBox(width: 4),
                       Text(
                         movie.voteAverage!.toStringAsFixed(1),

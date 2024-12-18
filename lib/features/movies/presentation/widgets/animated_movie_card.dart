@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movie_app/features/movies/presentation/widgets/shimmer_placeholder.dart';
 import '../../../../core/constants/api_constants.dart';
 import '../../domain/entities/movie.dart';
@@ -116,9 +117,9 @@ class _AnimatedMovieCardState extends State<AnimatedMovieCard>
                             const SizedBox(height: 4),
                             Row(
                               children: [
-                                const Icon(
-                                  Icons.star,
-                                  color: Colors.amber,
+                                FaIcon(
+                                  FontAwesomeIcons.star,
+                                  color: Colors.yellow,
                                   size: 16,
                                 ),
                                 const SizedBox(width: 4),

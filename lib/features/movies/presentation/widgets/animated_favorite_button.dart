@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AnimatedFavoriteButton extends StatefulWidget {
   final bool isFavorite;
@@ -58,8 +59,10 @@ class _AnimatedFavoriteButtonState extends State<AnimatedFavoriteButton>
       builder: (context, child) => Transform.scale(
         scale: _scaleAnimation.value,
         child: IconButton(
-          icon: Icon(
-            widget.isFavorite ? Icons.favorite : Icons.favorite_border,
+          icon: FaIcon(
+            widget.isFavorite
+                ? FontAwesomeIcons.heartCircleBolt
+                : FontAwesomeIcons.heart,
             color: widget.isFavorite ? Colors.red : Colors.grey,
           ),
           onPressed: _handleTap,

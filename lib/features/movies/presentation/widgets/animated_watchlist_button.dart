@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AnimatedWatchlistButton extends StatefulWidget {
   final bool isWatchlisted;
@@ -11,7 +12,8 @@ class AnimatedWatchlistButton extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<AnimatedWatchlistButton> createState() => _AnimatedWatchlistButtonState();
+  State<AnimatedWatchlistButton> createState() =>
+      _AnimatedWatchlistButtonState();
 }
 
 class _AnimatedWatchlistButtonState extends State<AnimatedWatchlistButton>
@@ -58,8 +60,10 @@ class _AnimatedWatchlistButtonState extends State<AnimatedWatchlistButton>
       builder: (context, child) => Transform.scale(
         scale: _scaleAnimation.value,
         child: IconButton(
-          icon: Icon(
-            widget.isWatchlisted ? Icons.bookmark : Icons.bookmark_border,
+          icon: FaIcon(
+            widget.isWatchlisted
+                ? FontAwesomeIcons.solidBookmark
+                : FontAwesomeIcons.bookmark,
             color: widget.isWatchlisted ? Colors.blue : Colors.grey,
           ),
           onPressed: _handleTap,

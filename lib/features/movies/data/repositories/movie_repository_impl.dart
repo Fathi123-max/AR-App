@@ -70,6 +70,7 @@ class MovieRepositoryImpl implements MovieRepository {
   Future<Either<Failure, bool>> toggleWatchlist(Movie movie) async {
     try {
       await localDataSource.toggleWatchlist(movie as MovieModel);
+
       return const Right(true);
     } catch (e) {
       return Left(CacheFailure(e.toString()));
