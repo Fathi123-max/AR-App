@@ -29,14 +29,24 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
         status: MovieListStatus.failure,
         error: failure.message,
       )),
-      (isFavorite) => emit(state.copyWith(
-        movies: state.movies.map((movie) {
-          if (movie.id == event.movie.id) {
-            return movie.copyWith(isFavorite: isFavorite);
-          }
-          return movie;
-        }).toList(),
-      )),
+      (isFavorite) {
+        if (isFavorite) {
+          // Add to favorites
+          emit(state.copyWith(
+            favoriteMovies: [
+              ...state.favoriteMovies,
+              event.movie.copyWith(isFavorite: true)
+            ],
+          ));
+        } else {
+          // Remove from favorites
+          emit(state.copyWith(
+            favoriteMovies: state.favoriteMovies
+                .where((movie) => movie.id != event.movie.id)
+                .toList(),
+          ));
+        }
+      },
     );
   }
 
@@ -45,7 +55,6 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
     Emitter<MovieListState> emit,
   ) async {
     final result = await repository.toggleWatchlist(event.movie);
-    print("ToggleWatchlist result: $result"); // Debugging line
 
     result.fold(
       (failure) => emit(state.copyWith(
@@ -53,15 +62,22 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
         error: failure.message,
       )),
       (isWatchlisted) {
-        print("Is Watchlisted: $isWatchlisted"); // Debugging line
-        emit(state.copyWith(
-          movies: state.movies.map((movie) {
-            if (movie.id == event.movie.id) {
-              return movie.copyWith(isWatchlisted: isWatchlisted);
-            }
-            return movie;
-          }).toList(),
-        ));
+        if (isWatchlisted) {
+          // Add to watchlist
+          emit(state.copyWith(
+            watchlistMovies: [
+              ...state.watchlistMovies,
+              event.movie.copyWith(isWatchlisted: true)
+            ],
+          ));
+        } else {
+          // Remove from watchlist
+          emit(state.copyWith(
+            watchlistMovies: state.watchlistMovies
+                .where((movie) => movie.id != event.movie.id)
+                .toList(),
+          ));
+        }
       },
     );
   }
@@ -94,7 +110,9 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
     LoadMoreMovies event,
     Emitter<MovieListState> emit,
   ) async {
-    if (state.hasReachedMax) return;
+    if (state.hasReachedMax) {
+      return; // Don't attempt to load more if max is reached
+    }
 
     emit(state.copyWith(status: MovieListStatus.loading));
 
@@ -106,12 +124,16 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
         error: failure.message,
       )),
       (movies) {
-        _currentPage++;
-        emit(state.copyWith(
-          status: MovieListStatus.success,
-          movies: List.of(state.movies)..addAll(movies),
-          hasReachedMax: movies.length < 20,
-        ));
+        if (movies.isEmpty) {
+          emit(state.copyWith(hasReachedMax: true)); // No new movies, set flag
+        } else {
+          _currentPage++;
+          emit(state.copyWith(
+            status: MovieListStatus.success,
+            movies: List.of(state.movies)..addAll(movies),
+            hasReachedMax: movies.length < 20,
+          ));
+        }
       },
     );
   }

@@ -6,60 +6,68 @@ import 'animated_movie_card.dart';
 
 class StaggeredMovieGrid extends StatelessWidget {
   final List<MovieModel> movies;
-  final Function(MovieModel) onMovieTap;
   final bool isLoading;
-  final VoidCallback? onLoadMore;
+  final Function(MovieModel) onMovieTap;
+  final VoidCallback onLoadMore;
 
   const StaggeredMovieGrid({
     Key? key,
     required this.movies,
+    required this.isLoading,
     required this.onMovieTap,
-    this.isLoading = false,
-    this.onLoadMore,
+    required this.onLoadMore,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return NotificationListener<ScrollNotification>(
       onNotification: (ScrollNotification scrollInfo) {
-        if (!isLoading &&
-            scrollInfo.metrics.pixels == scrollInfo.metrics.maxScrollExtent &&
-            onLoadMore != null) {
-          onLoadMore!();
+        if (scrollInfo is ScrollEndNotification &&
+            scrollInfo.metrics.extentAfter == 0) {
+          onLoadMore();
         }
-        return true;
+        return false;
       },
-      child: AnimationLimiter(
-        child: GridView.builder(
-          padding: const EdgeInsets.all(8.0),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 0.7,
-            crossAxisSpacing: 8.0,
-            mainAxisSpacing: 8.0,
-          ),
-          itemCount: movies.length + (isLoading ? 2 : 0),
-          itemBuilder: (context, index) {
-            if (index >= movies.length) {
-              return const ShimmerPlaceholder();
-            }
-
-            return AnimationConfiguration.staggeredGrid(
-              position: index,
-              columnCount: 2,
-              duration: const Duration(milliseconds: 375),
-              child: SlideAnimation(
-                verticalOffset: 50.0,
-                child: FadeInAnimation(
-                  child: AnimatedMovieCard(
-                    movie: movies[index],
-                    onTap: () => onMovieTap(movies[index]),
-                  ),
-                ),
-              ),
-            );
-          },
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 0.7,
         ),
+        itemCount: movies.length + (isLoading ? 2 : 0),
+        itemBuilder: (context, index) {
+          if (index >= movies.length) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          final movie = movies[index];
+          return GestureDetector(
+            onTap: () => onMovieTap(movie),
+            child: Card(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Hero(
+                    tag: 'grid-movie-${movie.id}', // Added 'grid-' prefix
+                    child: Image.network(
+                      'https://image.tmdb.org/t/p/w500${movie.posterPath}',
+                      height: 200,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      movie.title ?? '',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }

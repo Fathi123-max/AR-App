@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:movie_app/core/di/injection_container.dart';
 import 'package:movie_app/features/movies/data/models/movie_model.dart';
 import 'package:movie_app/features/movies/presentation/bloc/movie_list_bloc.dart';
 import 'package:movie_app/features/movies/presentation/widgets/animated_watchlist_button.dart';
@@ -18,23 +19,26 @@ class MovieDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isFromFavorites =
+        ModalRoute.of(context)?.settings.arguments as bool? ?? false;
+
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
             leading: IconButton(
               icon: const FaIcon(FontAwesomeIcons.arrowLeft),
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: () => Navigator.pop(context),
             ),
             expandedHeight: 300,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Hero(
-                tag: 'movie-${movie.id}',
-                child: CachedNetworkImage(
-                  imageUrl: '${ApiConstants.imageBaseUrl}${movie.backdropPath}',
+                tag: isFromFavorites
+                    ? 'favorite-movie-${movie.id}'
+                    : 'grid-movie-${movie.id}',
+                child: Image.network(
+                  'https://image.tmdb.org/t/p/w500${movie.backdropPath}',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -57,12 +61,16 @@ class MovieDetailsPage extends StatelessWidget {
                       ),
                       Row(
                         children: [
+                          // For Favorite Button
                           BlocBuilder<MovieListBloc, MovieListState>(
                             buildWhen: (p, c) =>
-                                p.favoriteMovies != c.favoriteMovies,
+                                p.favoriteMovies != c.favoriteMovies ||
+                                p.movies != c.movies,
                             builder: (context, state) {
+                              final isFavorite = state.favoriteMovies
+                                  .any((m) => m.id == movie.id);
                               return AnimatedFavoriteButton(
-                                isFavorite: movie.isFavorite ?? false,
+                                isFavorite: isFavorite,
                                 onPressed: () {
                                   context
                                       .read<MovieListBloc>()
@@ -71,12 +79,17 @@ class MovieDetailsPage extends StatelessWidget {
                               );
                             },
                           ),
+
+// For Watchlist Button
                           BlocBuilder<MovieListBloc, MovieListState>(
                             buildWhen: (p, c) =>
-                                p.watchlistMovies != c.watchlistMovies,
+                                p.watchlistMovies != c.watchlistMovies ||
+                                p.movies != c.movies,
                             builder: (context, state) {
+                              final isWatchlisted = state.watchlistMovies
+                                  .any((m) => m.id == movie.id);
                               return AnimatedWatchlistButton(
-                                isWatchlisted: movie.isWatchlisted ?? false,
+                                isWatchlisted: isWatchlisted,
                                 onPressed: () {
                                   context
                                       .read<MovieListBloc>()

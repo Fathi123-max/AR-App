@@ -59,8 +59,8 @@ class MovieRepositoryImpl implements MovieRepository {
   @override
   Future<Either<Failure, bool>> toggleFavorite(MovieModel movie) async {
     try {
-      await localDataSource.toggleFavorite(movie);
-      return const Right(true);
+      final isNowFavorite = await localDataSource.toggleFavorite(movie);
+      return Right(isNowFavorite);
     } catch (e) {
       return Left(CacheFailure(e.toString()));
     }
@@ -69,9 +69,8 @@ class MovieRepositoryImpl implements MovieRepository {
   @override
   Future<Either<Failure, bool>> toggleWatchlist(MovieModel movie) async {
     try {
-      await localDataSource.toggleWatchlist(movie);
-
-      return const Right(true);
+      final isNowWatchlisted = await localDataSource.toggleWatchlist(movie);
+      return Right(isNowWatchlisted);
     } catch (e) {
       return Left(CacheFailure(e.toString()));
     }

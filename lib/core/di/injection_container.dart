@@ -8,14 +8,16 @@ import '../../features/movies/data/repositories/movie_repository_impl.dart';
 import '../../features/movies/domain/repositories/movie_repository.dart';
 import 'modules/database_module.dart';
 import 'modules/network_module.dart';
+import 'package:path_provider/path_provider.dart';
 
 final sl = GetIt.instance;
 
 Future<void> initializeDependencies() async {
-  // Initialize modules
-  // await Hive.initFlutter();
-  // Hive.registerAdapter(MovieModelAdapter());
-  // await DatabaseModule.init();
+  final document = await getApplicationDocumentsDirectory();
+  await Hive.initFlutter(document.path);
+  if (!Hive.isAdapterRegistered(MovieModelAdapter().typeId)) {
+    Hive.registerAdapter(MovieModelAdapter());
+  }
 
   // External dependencies
 

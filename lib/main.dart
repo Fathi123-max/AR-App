@@ -7,15 +7,10 @@ import 'core/di/injection_container.dart' as di;
 import 'core/routes/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'features/movies/presentation/bloc/movie_list_bloc.dart';
-import 'package:path_provider/path_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final document = await getApplicationDocumentsDirectory();
-  await Hive.initFlutter(document.path);
-  if (!Hive.isAdapterRegistered(MovieModelAdapter().typeId)) {
-    Hive.registerAdapter(MovieModelAdapter());
-  }
+
   await di.initializeDependencies();
   runApp(const MyApp());
 }
@@ -26,8 +21,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        create: (_) =>
-            MovieListBloc(repository: di.sl())..add(const LoadMovies()),
+        create: (_) => MovieListBloc(repository: di.sl())
+          ..add(const LoadMovies())
+          ..add(const LoadFavorites())
+          ..add(const LoadWatchlist()),
         child: MaterialApp(
           title: 'Movie App',
           theme: AppTheme.light,

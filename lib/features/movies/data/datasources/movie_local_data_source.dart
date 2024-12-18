@@ -4,8 +4,8 @@ import '../models/movie_model.dart';
 abstract class MovieLocalDataSource {
   Future<List<MovieModel>> getFavoriteMovies();
   Future<List<MovieModel>> getWatchlistMovies();
-  Future<void> toggleFavorite(MovieModel movie);
-  Future<void> toggleWatchlist(MovieModel movie);
+  Future<bool> toggleFavorite(MovieModel movie); // Return bool
+  Future<bool> toggleWatchlist(MovieModel movie); // Return bool
 }
 
 class MovieLocalDataSourceImpl implements MovieLocalDataSource {
@@ -28,20 +28,24 @@ class MovieLocalDataSourceImpl implements MovieLocalDataSource {
   }
 
   @override
-  Future<void> toggleFavorite(MovieModel movie) async {
+  Future<bool> toggleFavorite(MovieModel movie) async {
     if (favoriteBox.containsKey(movie.id)) {
       await favoriteBox.delete(movie.id);
+      return false; // Not favorite anymore
     } else {
-      await favoriteBox.put(movie.id, movie);
+      await favoriteBox.put(movie.id, movie.copyWith(isFavorite: true));
+      return true; // Now favorite
     }
   }
 
   @override
-  Future<void> toggleWatchlist(MovieModel movie) async {
+  Future<bool> toggleWatchlist(MovieModel movie) async {
     if (watchlistBox.containsKey(movie.id)) {
       await watchlistBox.delete(movie.id);
+      return false; // Not in watchlist anymore
     } else {
-      await watchlistBox.put(movie.id, movie);
+      await watchlistBox.put(movie.id, movie.copyWith(isWatchlisted: true));
+      return true; // Now in watchlist
     }
   }
 }

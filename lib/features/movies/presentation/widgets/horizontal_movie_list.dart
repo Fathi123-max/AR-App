@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/features/movies/data/models/movie_model.dart';
 import 'animated_movie_card.dart';
@@ -6,22 +7,16 @@ class HorizontalMovieList extends StatelessWidget {
   final String title;
   final List<MovieModel> movies;
   final Function(MovieModel) onMovieTap;
-  final bool showEmptyMessage;
 
   const HorizontalMovieList({
     Key? key,
     required this.title,
     required this.movies,
     required this.onMovieTap,
-    this.showEmptyMessage = true,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (movies.isEmpty && !showEmptyMessage) {
-      return const SizedBox.shrink();
-    }
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -29,36 +24,51 @@ class HorizontalMovieList extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Text(
             title,
-            style: Theme.of(context).textTheme.titleLarge,
+            style: Theme.of(context).textTheme.headlineSmall,
           ),
         ),
-        if (movies.isEmpty && showEmptyMessage)
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'No movies found',
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-            ),
-          )
-        else
-          SizedBox(
-            height: 240,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              itemCount: movies.length,
-              itemBuilder: (context, index) {
-                final movie = movies[index];
-                return AnimatedMovieCard(
-                  movie: movie,
-                  onTap: () => onMovieTap(movie),
-                  isHorizontal: true,
-                );
-              },
-            ),
+        SizedBox(
+          height: 200,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: movies.length,
+            itemBuilder: (context, index) {
+              final movie = movies[index];
+              return GestureDetector(
+                onTap: () => onMovieTap(movie),
+                child: Container(
+                  width: 130,
+                  margin: const EdgeInsets.only(left: 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Hero(
+                        tag:
+                            'favorite-movie-${movie.id}', // Added 'favorite-' prefix
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: CachedNetworkImage(
+                            height: 150,
+                            width: 130,
+                            fit: BoxFit.cover,
+                            imageUrl:
+                                'https://image.tmdb.org/t/p/w500${movie.posterPath}',
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        movie.title ?? '',
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
           ),
+        ),
       ],
     );
   }

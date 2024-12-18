@@ -20,7 +20,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   # UI Components
-  cached_network_image: ^3.2.3
+  cached_network_image: ^3.4.1
   shimmer: ^3.0.0
   # Utils
   equatable: ^2.0.5
@@ -30,6 +30,7 @@ dependencies:
   dartz: ^0.10.1
   flutter_staggered_animations: ^1.1.1
   font_awesome_flutter: ^10.8.0
+  ad_gridview: ^0.0.5
 
 dev_dependencies:
   flutter_test:

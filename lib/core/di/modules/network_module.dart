@@ -53,14 +53,4 @@ class DioService {
 
   /// Get Dio instance
   Dio get dio => _dio;
-
-  /// Clear the cache
-  Future<void> clearCache() async {
-    await _cacheOptions.store!.clean();
-  }
-
-  /// Remove a specific cached response
-  Future<void> removeCache(String key) async {
-    await _cacheOptions.store!.delete(key);
-  }
 }
