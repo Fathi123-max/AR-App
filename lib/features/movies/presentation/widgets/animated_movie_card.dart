@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movie_app/features/movies/data/models/movie_model.dart';
 import 'package:movie_app/features/movies/presentation/widgets/shimmer_placeholder.dart';
 import '../../../../core/constants/api_constants.dart';
-import '../../domain/entities/movie.dart';
 
 class AnimatedMovieCard extends StatefulWidget {
   final MovieModel movie;

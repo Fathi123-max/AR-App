@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:movie_app/features/movies/data/models/movie_model.dart';
-import 'package:movie_app/features/movies/presentation/widgets/shimmer_placeholder.dart';
-import 'animated_movie_card.dart';
 
 class StaggeredMovieGrid extends StatelessWidget {
   final List<MovieModel> movies;

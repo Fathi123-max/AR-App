@@ -13,10 +13,6 @@ class DatabaseModule {
       print("Attempting to open the favorites box...");
 
       bool isOpen = Hive.isBoxOpen('favorites');
-      if (isOpen == null) {
-        print("Error: Hive.isBoxOpen returned null.");
-        throw Exception("Hive.isBoxOpen returned null.");
-      }
 
       if (!isOpen) {
         print("Favorites box is not open. Opening now...");

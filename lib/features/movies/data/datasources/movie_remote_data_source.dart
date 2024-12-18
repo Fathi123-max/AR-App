@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:movie_app/core/di/modules/dio_network_layer.dart';
 import 'package:movie_app/core/di/modules/network_module.dart';
 import '../../../../core/constants/api_constants.dart';
 import '../../../../core/error/failures.dart';

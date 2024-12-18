@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/features/movies/data/models/movie_model.dart';
-import 'animated_movie_card.dart';
 
 class HorizontalMovieList extends StatelessWidget {
   final String title;

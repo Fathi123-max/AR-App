@@ -21,67 +21,80 @@ class MovieListPage extends StatelessWidget {
           context.read<MovieListBloc>().add(const LoadFavorites());
           context.read<MovieListBloc>().add(const LoadWatchlist());
         },
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: BlocBuilder<MovieListBloc, MovieListState>(
-                builder: (context, state) {
-                  return HorizontalMovieList(
-                    title: 'Favorites',
-                    movies: state.favoriteMovies,
-                    onMovieTap: (movie) => Navigator.pushNamed(
-                      context,
-                      '/movie-details',
-                      arguments: movie,
-                    ),
-                  );
-                },
-              ),
-            ),
-            SliverFillRemaining(
-              child: BlocBuilder<MovieListBloc, MovieListState>(
-                builder: (context, state) {
-                  if (state.status == MovieListStatus.initial) {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-
-                  if (state.status == MovieListStatus.failure) {
-                    return Center(
-                      child: Text(state.error ?? 'Something went wrong'),
+        child: NotificationListener<ScrollNotification>(
+          onNotification: (scrollNotification) {
+            if (scrollNotification is ScrollUpdateNotification &&
+                scrollNotification.metrics.pixels ==
+                    scrollNotification.metrics.maxScrollExtent) {
+              final state = context.read<MovieListBloc>().state;
+              if (!state.hasReachedMax) {
+                context.read<MovieListBloc>().add(const LoadMoreMovies());
+              }
+            }
+            return false;
+          },
+          child: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: BlocBuilder<MovieListBloc, MovieListState>(
+                  builder: (context, state) {
+                    return HorizontalMovieList(
+                      title: 'Favorites',
+                      movies: state.favoriteMovies,
+                      onMovieTap: (movie) => Navigator.pushNamed(
+                        context,
+                        '/movie-details',
+                        arguments: movie,
+                      ),
                     );
-                  }
+                  },
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    "All Movies",
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: BlocConsumer<MovieListBloc, MovieListState>(
+                  listener: (context, state) =>
+                      state.status == MovieListStatus.failure
+                          ? ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(state.error!),
+                              ),
+                            )
+                          : null,
+                  listenWhen: (previous, current) =>
+                      previous.status != current.status,
+                  builder: (context, state) {
+                    if (state.status == MovieListStatus.initial) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
 
-                  if (state.hasReachedMax) {
-                    return const Center(child: Text('No more movies to load.'));
-                  }
+                    if (state.hasReachedMax) {
+                      return const Center(
+                          child: Text('No more movies to load.'));
+                    }
 
-                  return NotificationListener<ScrollNotification>(
-                    onNotification: (scrollNotification) {
-                      if (scrollNotification is ScrollUpdateNotification &&
-                          scrollNotification.metrics.pixels ==
-                              scrollNotification.metrics.maxScrollExtent) {
-                        if (!state.hasReachedMax) {
-                          context
-                              .read<MovieListBloc>()
-                              .add(const LoadMoreMovies());
-                        }
-                      }
-                      return false;
-                    },
-                    child: AdGridView(
+                    return AdGridView(
+                      adIndex: 10,
                       crossAxisCount: 2,
                       adGridViewType: AdGridViewType.repeated,
-                      adIndex: 10,
                       adWidget: _buildHorizontalMovieList(state, context),
                       itemCount: state.movies.length,
                       itemWidget: (context, index) =>
                           _buildMovieCard(state.movies[index], context),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );
