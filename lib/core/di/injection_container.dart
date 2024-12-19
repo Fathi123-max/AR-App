@@ -11,19 +11,20 @@ import 'package:path_provider/path_provider.dart';
 
 final sl = GetIt.instance;
 
+/// Initialize all dependencies
 Future<void> initializeDependencies() async {
+  sl.registerLazySingleton<DioService>(() => DioService());
+  // Initialize Hive
   final document = await getApplicationDocumentsDirectory();
   await Hive.initFlutter(document.path);
   if (!Hive.isAdapterRegistered(MovieModelAdapter().typeId)) {
     Hive.registerAdapter(MovieModelAdapter());
   }
 
-  // External dependencies
-
   // Database boxes
   final favoriteBox = await DatabaseModule.openFavoritesBox();
   final watchlistBox = await DatabaseModule.openWatchlistBox();
-  sl.registerLazySingleton<DioService>(() => DioService());
+
   // Data sources
   sl.registerLazySingleton<MovieRemoteDataSource>(
     () => MovieRemoteDataSourceImpl(
@@ -45,5 +46,4 @@ Future<void> initializeDependencies() async {
       localDataSource: sl(),
     ),
   );
-  //
 }

@@ -10,6 +10,11 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
   final MovieRepository repository;
   int _currentPage = 1;
 
+  /// Event handlers for [MovieListBloc]
+  ///
+  /// Handles all events coming to the [MovieListBloc] and emits a new state
+  /// based on the event.
+
   MovieListBloc({required this.repository}) : super(const MovieListState()) {
     on<LoadMovies>(_onLoadMovies);
     on<LoadMoreMovies>(_onLoadMoreMovies);
@@ -18,6 +23,7 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
     on<ToggleFavorite>(_onToggleFavorite);
     on<ToggleWatchlist>(_onToggleWatchlist);
   }
+
   Future<void> _onToggleFavorite(
     ToggleFavorite event,
     Emitter<MovieListState> emit,
@@ -100,7 +106,7 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
         emit(state.copyWith(
           status: MovieListStatus.success,
           movies: movies,
-          hasReachedMax: movies.length < 20,
+          hasReachedMax: movies.isEmpty, // Adjusted condition
         ));
       },
     );
@@ -131,7 +137,7 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
           emit(state.copyWith(
             status: MovieListStatus.success,
             movies: List.of(state.movies)..addAll(movies),
-            hasReachedMax: movies.length < 20,
+            hasReachedMax: movies.length < 20, // Adjusted condition
           ));
         }
       },

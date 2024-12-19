@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/constants/api_constants.dart';
 import 'package:movie_app/features/movies/data/models/movie_model.dart';
 
 class HorizontalMovieList extends StatelessWidget {
@@ -26,48 +27,61 @@ class HorizontalMovieList extends StatelessWidget {
             style: Theme.of(context).textTheme.headlineSmall,
           ),
         ),
-        SizedBox(
-          height: 200,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: movies.length,
-            itemBuilder: (context, index) {
-              final movie = movies[index];
-              return GestureDetector(
-                onTap: () => onMovieTap(movie),
-                child: Container(
-                  width: 130,
-                  margin: const EdgeInsets.only(left: 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Hero(
-                        tag:
-                            'favorite-movie-${movie.id}', // Added 'favorite-' prefix
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: CachedNetworkImage(
-                            height: 150,
-                            width: 130,
-                            fit: BoxFit.cover,
-                            imageUrl:
-                                'https://image.tmdb.org/t/p/w500${movie.posterPath}',
+        if (movies.isEmpty)
+          const Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Text(
+              'No movies found',
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 16,
+              ),
+            ),
+          ),
+        if (movies.isNotEmpty)
+          SizedBox(
+            height: 200,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: movies.length,
+              itemBuilder: (context, index) {
+                final movie = movies[index];
+                return GestureDetector(
+                  onTap: () => onMovieTap(movie),
+                  child: Container(
+                    width: 130,
+                    margin: const EdgeInsets.only(left: 16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Hero(
+                          tag: movie.isFavorite
+                              ? 'favorite-movie-${movie.id}'
+                              : 'watchlist-movie-${movie.id}', // Added 'favorite-' prefix
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: CachedNetworkImage(
+                              height: 150,
+                              width: 130,
+                              fit: BoxFit.cover,
+                              imageUrl:
+                                  '${ApiConstants.imageBaseUrl}${movie.posterPath}',
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        movie.title ?? '',
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
+                        const SizedBox(height: 8),
+                        Text(
+                          movie.title ?? '',
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
-        ),
       ],
     );
   }

@@ -2,6 +2,7 @@ import 'package:ad_gridview/ad_gridview.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/core/constants/api_constants.dart';
 import 'package:movie_app/features/movies/data/models/movie_model.dart';
 import '../bloc/movie_list_bloc.dart';
 import '../widgets/horizontal_movie_list.dart';
@@ -61,26 +62,28 @@ class MovieListPage extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: BlocConsumer<MovieListBloc, MovieListState>(
-                  listener: (context, state) =>
-                      state.status == MovieListStatus.failure
-                          ? ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(state.error!),
-                              ),
-                            )
-                          : null,
-                  listenWhen: (previous, current) =>
-                      previous.status != current.status,
-                  builder: (context, state) {
-                    if (state.status == MovieListStatus.initial) {
-                      return const Center(child: CircularProgressIndicator());
-                    }
+                  listener: (context, state) {
+                    state.status == MovieListStatus.failure
+                        ? ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(state.error!),
+                            ),
+                          )
+                        : null;
 
                     if (state.hasReachedMax) {
-                      return const Center(
-                          child: Text('No more movies to load.'));
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('you have reached the end of the list'),
+                        ),
+                      );
                     }
-
+                  },
+                  listenWhen: (previous, current) =>
+                      previous.status != current.status,
+                  buildWhen: (previous, current) =>
+                      previous.status != current.status,
+                  builder: (context, state) {
                     return AdGridView(
                       adIndex: 10,
                       crossAxisCount: 2,
@@ -127,10 +130,13 @@ class MovieListPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: CachedNetworkImage(
-                imageUrl: "https://image.tmdb.org/t/p/w500${movie.posterPath}",
-                fit: BoxFit.cover,
-                width: double.infinity,
+              child: Hero(
+                tag: 'grid-movie-${movie.id}',
+                child: CachedNetworkImage(
+                  imageUrl: "${ApiConstants.imageBaseUrl}${movie.posterPath}",
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                ),
               ),
             ),
             Padding(
