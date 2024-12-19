@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/constants/api_constants.dart';
 import 'package:movie_app/features/movies/data/models/movie_model.dart';
+import 'package:movie_app/features/movies/presentation/widgets/shimmer_placeholder.dart';
 import '../bloc/movie_list_bloc.dart';
 import '../widgets/horizontal_movie_list.dart';
 
@@ -35,6 +36,7 @@ class MovieListPage extends StatelessWidget {
             return false;
           },
           child: CustomScrollView(
+            physics: const ClampingScrollPhysics(),
             slivers: [
               SliverToBoxAdapter(
                 child: BlocBuilder<MovieListBloc, MovieListState>(
@@ -71,10 +73,18 @@ class MovieListPage extends StatelessWidget {
                           )
                         : null;
 
+                    state.status == MovieListStatus.loading
+                        ? ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Loading...'),
+                            ),
+                          )
+                        : null;
+
                     if (state.hasReachedMax) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
-                          content: Text('you have reached the end of the list'),
+                          content: Text('No more movies'),
                         ),
                       );
                     }
@@ -116,7 +126,6 @@ class MovieListPage extends StatelessWidget {
     );
   }
 
-// Extracted method to build individual movie card widget
   Widget _buildMovieCard(MovieModel movie, BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.pushNamed(
@@ -131,13 +140,17 @@ class MovieListPage extends StatelessWidget {
           children: [
             Expanded(
               child: Hero(
-                tag: 'grid-movie-${movie.id}',
-                child: CachedNetworkImage(
-                  imageUrl: "${ApiConstants.imageBaseUrl}${movie.posterPath}",
-                  fit: BoxFit.cover,
-                  width: double.infinity,
-                ),
-              ),
+                  tag: 'grid-movie-${movie.id}',
+                  child: CachedNetworkImage(
+                      imageUrl:
+                          "${ApiConstants.imageBaseUrl}${movie.posterPath}",
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                      placeholder: (context, url) => const ShimmerPlaceholder(),
+                      errorWidget: (context, url, error) => const ColoredBox(
+                            color: Colors.grey,
+                            child: Icon(Icons.error),
+                          ))),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),

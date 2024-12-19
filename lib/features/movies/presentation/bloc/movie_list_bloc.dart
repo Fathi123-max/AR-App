@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:movie_app/features/movies/data/models/movie_model.dart';
+import 'package:movie_app/features/movies/data/models/person_model.dart';
 import '../../domain/repositories/movie_repository.dart';
 
 part 'movie_list_event.dart';
@@ -22,6 +23,23 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
     on<LoadWatchlist>(_onLoadWatchlist);
     on<ToggleFavorite>(_onToggleFavorite);
     on<ToggleWatchlist>(_onToggleWatchlist);
+    // cridits
+    on<GetMovieCredits>(_onGetMovieCredits);
+  }
+
+  Future<void> _onGetMovieCredits(
+    GetMovieCredits event,
+    Emitter<MovieListState> emit,
+  ) async {
+    final result = await repository.getMovieCredits(event.movieId);
+    result.fold(
+      (failure) => emit(state.copyWith(
+        status: MovieListStatus.failure,
+        error: failure.message,
+      )),
+      (credits) => emit(
+          state.copyWith(credits: credits, status: MovieListStatus.success)),
+    );
   }
 
   Future<void> _onToggleFavorite(

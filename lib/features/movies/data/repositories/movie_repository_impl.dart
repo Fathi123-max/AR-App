@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:movie_app/features/movies/data/models/movie_model.dart';
+import 'package:movie_app/features/movies/data/models/person_model.dart';
 import '../../../../core/error/failures.dart';
 import '../../domain/repositories/movie_repository.dart';
 import '../datasources/movie_local_data_source.dart';
@@ -72,6 +73,17 @@ class MovieRepositoryImpl implements MovieRepository {
       return Right(isNowWatchlisted);
     } catch (e) {
       return Left(CacheFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<PersonModel>>> getMovieCredits(
+      int movieId) async {
+    try {
+      final credits = await remoteDataSource.getMovieCredits(movieId);
+      return Right(credits);
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
     }
   }
 }

@@ -6,6 +6,7 @@ import 'package:movie_app/core/constants/api_constants.dart';
 import 'package:movie_app/features/movies/data/models/movie_model.dart';
 import 'package:movie_app/features/movies/presentation/bloc/movie_list_bloc.dart';
 import 'package:movie_app/features/movies/presentation/widgets/animated_watchlist_button.dart';
+import 'package:movie_app/features/movies/presentation/widgets/move_cridits.dart';
 import '../widgets/animated_favorite_button.dart';
 
 class MovieDetailsPage extends StatelessWidget {
@@ -28,13 +29,13 @@ class MovieDetailsPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
+                spacing: 16,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _buildTitleRow(context),
-                  const SizedBox(height: 8),
                   _buildMetadataRow(context),
-                  const SizedBox(height: 16),
                   _buildOverviewSection(context),
+                  MovieCreditsList(movieId: movie.id!)
                 ],
               ),
             ),

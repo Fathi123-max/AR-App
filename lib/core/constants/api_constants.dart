@@ -8,5 +8,6 @@ class ApiConstants {
   // API Endpoints
   static const String popularMovies = '/movie/popular';
   static const String movieDetails = '/movie/';
-  static const String movieCredits = '/movie/{movie_id}/credits';
+  // cridts
+  static String movieCredits(int movieId) => '/movie/$movieId/credits';
 }

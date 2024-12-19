@@ -34,3 +34,10 @@ class ToggleWatchlist extends MovieListEvent {
 
   const ToggleWatchlist(this.movie);
 }
+
+//cridits
+class GetMovieCredits extends MovieListEvent {
+  final int movieId; // Pass the movieId as a parameter
+
+  const GetMovieCredits(this.movieId);
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/constants/api_constants.dart';
 import 'package:movie_app/features/movies/data/models/movie_model.dart';
 
 class StaggeredMovieGrid extends StatelessWidget {
@@ -46,7 +47,7 @@ class StaggeredMovieGrid extends StatelessWidget {
                   Hero(
                     tag: 'grid-movie-${movie.id}', // Added 'grid-' prefix
                     child: Image.network(
-                      'https://image.tmdb.org/t/p/w500${movie.posterPath}',
+                      '${ApiConstants.imageBaseUrl}${movie.posterPath}',
                       height: 200,
                       width: double.infinity,
                       fit: BoxFit.cover,

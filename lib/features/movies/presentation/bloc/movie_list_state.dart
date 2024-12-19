@@ -7,12 +7,14 @@ class MovieListState extends Equatable {
   final List<MovieModel> movies;
   final List<MovieModel> favoriteMovies;
   final List<MovieModel> watchlistMovies;
+  final List<PersonModel> credits;
   final bool hasReachedMax;
   final String? error;
 
   const MovieListState({
     this.status = MovieListStatus.initial,
     this.movies = const [],
+    this.credits = const [],
     this.favoriteMovies = const [],
     this.watchlistMovies = const [],
     this.hasReachedMax = false,
@@ -22,6 +24,7 @@ class MovieListState extends Equatable {
   MovieListState copyWith({
     MovieListStatus? status,
     List<MovieModel>? movies,
+    List<PersonModel>? credits,
     List<MovieModel>? favoriteMovies,
     List<MovieModel>? watchlistMovies,
     bool? hasReachedMax,
@@ -30,6 +33,7 @@ class MovieListState extends Equatable {
     return MovieListState(
       status: status ?? this.status,
       movies: movies ?? this.movies,
+      credits: credits ?? this.credits,
       favoriteMovies: favoriteMovies ?? this.favoriteMovies,
       watchlistMovies: watchlistMovies ?? this.watchlistMovies,
       hasReachedMax: hasReachedMax ?? this.hasReachedMax,
@@ -42,6 +46,7 @@ class MovieListState extends Equatable {
         status,
         movies,
         favoriteMovies,
+        credits,
         watchlistMovies,
         hasReachedMax,
         error,
